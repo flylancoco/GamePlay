@@ -8,5 +8,5 @@ export enum EGuideStatus
     buyDragon3,
     buyDragon4,
     tip,
-    none,
+    none
 }

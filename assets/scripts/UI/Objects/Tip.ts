@@ -4,7 +4,7 @@ const {ccclass, property} = cc._decorator;
 export class Tip extends cc.Component {
     @property(cc.Label)
     private tipLabel: cc.Label = null;
-    private ready: boolean = true;
+    private ready = true;
 
     public playTip(message: string)
     {
@@ -22,9 +22,9 @@ export class Tip extends cc.Component {
             {
                 this.ready = true;
             }
-            ,this
+            , this
         );
-        
+
         let action = cc.sequence(action2, action3, action4, callback);
         this.node.runAction(action);
     }

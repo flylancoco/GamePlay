@@ -1,0 +1,20 @@
+{
+	"name": "excel",
+	"version": "0.0.1",
+	"author": "anmeng",
+	"description": "a cocos game",
+	"keywords": [
+		"javascript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://path/to/url"
+	},
+	"license": "MIT",
+	"scripts": {
+		"start": "node convertExcel.js"
+	},
+	"dependencies": {
+		"xlsx": "^0.14.0"
+	}
+}

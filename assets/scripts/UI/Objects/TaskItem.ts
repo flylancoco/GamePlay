@@ -1,19 +1,19 @@
 
-import { UIHelp } from "../../Utils/UIHelp";
-import { GameDataManager } from "../../Manager/GameDataManager";
-import { UIManager } from "../../Manager/UIManager";
-import TaskUI from "../TaskUI";
-import { AudioManager } from "../../Manager/AudioManager";
+import { AudioMgr } from '../../Manager/AudioMgr';
+import { GameDataManager } from '../../Manager/GameDataManager';
+import { UIMgr } from '../../Manager/UIManager';
+import { UIHelp } from '../../Utils/UIHelp';
+import TaskUI from '../TaskUI';
 
-import { ETaskType } from "../../Data/EnumTaskType";
+import { ETaskType } from '../../Data/EnumTaskType';
 
 const {ccclass, property} = cc._decorator;
 
-var BtnState = {
+let BtnState = {
     claim : 0,
     unable: 1,
-    unClaim: 2,
-}
+    unClaim: 2
+};
 
 @ccclass
 export class TaskItem extends cc.Component {
@@ -35,23 +35,12 @@ export class TaskItem extends cc.Component {
     @property(cc.Sprite)
     private taskSprite: cc.Sprite = null;
 
-    private _task: ServerTaskData;
     private _btnState: number;
     private _taskType: ETaskType;
     private _reward: number;
 
-    initItem(task: ServerTaskData)
+    public onBtnClaimOrGo()
     {
-        this.updateItem(task);
-    }
 
-    updateItem(task: ServerTaskData)
-    {
-        
-    }
-
-    onBtnClaimOrGo()
-    {
-        
     }
 }

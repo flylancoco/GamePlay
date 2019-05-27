@@ -1,7 +1,7 @@
 export class ConstValue {
-    public static readonly CONFIG_FILE_DIR = "config/";
-    public static readonly PREFAB_UI_DIR = "prefab/ui/";
-    public static readonly AUDIO_DIR = "audio/";
+    public static readonly CONFIG_FILE_DIR = 'config';
+    public static readonly PREFAB_UI_DIR = 'prefab/ui/';
+    public static readonly AUDIO_DIR = 'audio/';
     public static readonly SCREEN_HEIGHT = 1334;
     public static readonly SCREEN_WIDTH = 750;
     public static readonly ANGRY_TIME = 30;

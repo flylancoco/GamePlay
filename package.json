@@ -1,0 +1,40 @@
+{
+	"name": "pig",
+	"version": "0.0.1",
+	"author": "anmeng",
+	"description": "a cocos game",
+	"keywords": [
+		"javascript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://path/to/url"
+	},
+	"license": "MIT",
+	"engines": {
+		"cocos": "2.0.1"
+	},
+	"scripts": {
+		"start": "node index.js"
+	},
+	"devDependencies": {
+		"cos-nodejs-sdk-v5": "^2.4.6",
+		"del": "^3.0.0",
+		"gulp": "^3.9.1",
+		"gulp-javascript-obfuscator": "^1.1.4",
+		"gulp-json-editor": "^2.4.2",
+		"gulp-rename": "^1.4.0",
+		"gulp-replace": "^1.0.0",
+		"gulp-sftp": "^0.1.5",
+		"gulp-shell": "^0.6.5",
+		"gulp-ssh": "^0.7.0",
+		"gulp-zip": "^4.2.0",
+		"javascript-obfuscator": "^0.18.1",
+		"run-sequence": "^2.2.1"
+	},
+	"dependencies": {
+		"crypto-js": "^3.1.9-1",
+		"qcloud-cdn-node-sdk": "^1.0.0",
+		"tslint": "^5.16.0"
+	}
+}

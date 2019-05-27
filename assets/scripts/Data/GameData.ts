@@ -1,13 +1,13 @@
-import { ListenerManager } from "../Manager/ListenerManager";
-import { ListenerType } from "./ListenerType";
-import { GameDataManager } from "../Manager/GameDataManager";
-import { EGuideStatus } from "./EGuideStatus";
+import { GameDataManager } from '../Manager/GameDataManager';
+import { ListenerMgr } from '../Manager/ListenerManager';
+import { EGuideStatus } from './EGuideStatus';
+import { ListenerType } from './ListenerType';
 
 export class PlayerInfo
 {
-    public static className = "PlayerInfo";
+    public static className = 'PlayerInfo';
 
-    private _gold: number = 2000;
+    private _gold = 2000;
     public get gold(): number
     {
         return this._gold;
@@ -17,10 +17,10 @@ export class PlayerInfo
         this._gold = value;
         GameDataManager.getInstance().getGameData().updatePlayerInfo();
 
-        ListenerManager.getInstance().trigger(ListenerType.GoldChanged);
+        ListenerMgr.getInstance().trigger(ListenerType.GoldChanged);
     }
 
-    private _level: number = 1;
+    private _level = 1;
     public get level(): number
     {
         return this._level;
@@ -31,7 +31,7 @@ export class PlayerInfo
         GameDataManager.getInstance().getGameData().updatePlayerInfo();
     }
 
-    private _closeAudio: boolean = false;
+    private _closeAudio = false;
     public get closeAudio(): boolean
     {
         return this._closeAudio;
@@ -45,30 +45,30 @@ export class PlayerInfo
 
 export class GameData
 {
-    //-----------------------serializeData----------------------------
-    playerInfo: PlayerInfo = new PlayerInfo();
-    //----------------------------------------------------------------
+    // -----------------------serializeData----------------------------
+    public playerInfo: PlayerInfo = new PlayerInfo();
+    // ----------------------------------------------------------------
 
-    guideStatus: EGuideStatus = EGuideStatus.none;
+    public guideStatus: EGuideStatus = EGuideStatus.none;
 
-    serverTaskConfigData: ServerTaskData[] = null;
+    public serverTaskConfigData: ServerTaskData[] = null;
 
-    constructor()
+    public constructor()
     {
-        ListenerManager.getInstance().add(ListenerType.LoopUpdate, this, this.onUpdate);
+        ListenerMgr.getInstance().add(ListenerType.LoopUpdate, this, this.onUpdate);
     }
 
-    onUpdate(dt)
+    public onUpdate(dt)
     {
 
     }
 
-    initPlayerInfo(playerInfo: PlayerInfo)
+    public initPlayerInfo(playerInfo: PlayerInfo)
     {
-        if(playerInfo)
+        if (playerInfo)
         {
             this.playerInfo = playerInfo;
-            this.playerInfo["__proto__"] = PlayerInfo.prototype;
+            this.playerInfo.__proto__ = PlayerInfo.prototype;
         }
         else
         {
@@ -76,15 +76,15 @@ export class GameData
         }
     }
 
-    updatePlayerInfo()
+    public updatePlayerInfo()
     {
         // serializeData
-        //playerManager.setObjData(PlayerInfo.className, this.playerInfo);
+        // playerManager.setObjData(PlayerInfo.className, this.playerInfo);
     }
 
-    unserializeData(data)
+    public unserializeData(data)
     {
-        if(data == null)
+        if (data == null)
         {
             this.initPlayerInfo(null);
         }
@@ -93,6 +93,6 @@ export class GameData
             // unserializeData
         }
 
-        ListenerManager.getInstance().trigger(ListenerType.GameStart);
+        ListenerMgr.getInstance().trigger(ListenerType.GameStart);
     }
 }
