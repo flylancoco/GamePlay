@@ -20,7 +20,7 @@
 	"devDependencies": {
 		"cos-nodejs-sdk-v5": "^2.4.6",
 		"del": "^3.0.0",
-		"gulp": "^3.9.1",
+		"gulp": "^4.0.2",
 		"gulp-javascript-obfuscator": "^1.1.4",
 		"gulp-json-editor": "^2.4.2",
 		"gulp-rename": "^1.4.0",
